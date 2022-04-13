@@ -12,7 +12,7 @@ public class RateRepository {
     @Autowired
     private RestTemplate restTemplate;
 
-    public ExchangeRateDTO getRatesFromApi(String params) {
+    public ExchangeRateDTO getRatesFromExchangeratesapi(String params) {
         String uri = "http://api.exchangeratesapi.io/v1/latest" + params;
 
         return restTemplate.getForObject(uri, ExchangeRateDTO.class);
