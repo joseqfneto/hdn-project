@@ -2,7 +2,6 @@ package br.com.joseqfneto.hdn.DTO;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.Currency;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
