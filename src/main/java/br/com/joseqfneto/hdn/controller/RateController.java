@@ -3,6 +3,7 @@ package br.com.joseqfneto.hdn.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.joseqfneto.hdn.DTO.RateDTO;
 import br.com.joseqfneto.hdn.service.RateService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,13 @@ public class RateController {
 
     @GetMapping
     public ResponseEntity<Object> getRates() {
-        
-        return ResponseEntity.status(HttpStatus.OK).body(rateService.getRatesFromExchangeratesapi());
+        RateDTO rate = rateService.getRatesFromExchangeratesapi();
+        if (rate != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(rate);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Sorry. Unknown error.");
+        }
+
     }
-        
+
 }
