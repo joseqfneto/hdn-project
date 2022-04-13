@@ -32,7 +32,7 @@ public class RateService {
         RateDTO rateDTO = new RateDTO();
 
         // obtendo os valores atualizados de cambio
-        ExchangeRateDTO exchangeRateDTO = rateRepository.getRatesFromApi(params);
+        ExchangeRateDTO exchangeRateDTO = rateRepository.getRatesFromExchangeratesapi(params);
 
         // preencher os atributos do DTO de retorno
         rateDTO.setCurrency(base);
